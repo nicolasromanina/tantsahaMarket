@@ -63,12 +63,12 @@ const MAX_MESSAGES_DISPLAY = 50;
 const MAX_RETRIES = 3;
 
 const SUGGESTED_QUESTIONS = [
-  "Quels produits agricoles sont disponibles en ce moment ?",
-  "Comment passer une commande sur la plateforme ?",
-  "Est-ce que je peux vendre mes récoltes ici ?",
-  "Quelles sont les zones de livraison couvertes ?",
-  "Quels sont les prix du riz aujourd'hui ?",
-  "Comment créer un compte producteur ?"
+  "Inona ny vokatra tantsaha misy amin'izao ?",
+  "Ahoana ny fanaovana komandy ato amin'ny tantsahaMarket ?",
+  "Afaka mivarotra ny vokatro eto ve aho ?",
+  "Aiza daholo ny faritra efa misy livraison?",
+  "Otrinona ny vidim-bary androany ?",
+  "Ahoana anokafana kaonty Mpamboly ?"
 ];
 
 const storage = {
@@ -926,7 +926,7 @@ export const AIChatbot = () => {
                 {showQuickActions && messages.length <= 2 && (
                   <div className="px-6 pb-4 border-t border-green-100 pt-4">
                     <p className="text-sm font-semibold text-gray-700 mb-4">
-                      Questions fréquentes
+                      Fanontaniana matetika mipetraka
                     </p>
                     <div className={cn(
                       "grid gap-3",
