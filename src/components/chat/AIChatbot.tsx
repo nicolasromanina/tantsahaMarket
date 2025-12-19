@@ -699,7 +699,7 @@ export const AIChatbot = () => {
                       TantsahaBot
                       <Badge variant="secondary" className="bg-white/20 text-white text-xs">
                         <span className="h-2 w-2 rounded-full bg-green-300 mr-1 animate-pulse" />
-                        En ligne
+                        Miasa
                       </Badge>
                     </h3>
                     <p className="text-sm opacity-90">Assistant du marché agricole malgache</p>
@@ -763,7 +763,7 @@ export const AIChatbot = () => {
                           <RefreshCw className="h-4 w-4" />
                         </Button>
                       </TooltipTrigger>
-                      <TooltipContent>Nouvelle conversation</TooltipContent>
+                      <TooltipContent>Resaka vaovao</TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
 
@@ -953,7 +953,7 @@ export const AIChatbot = () => {
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
                       onKeyDown={handleKeyDown}
-                      placeholder="Posez votre question sur les produits, livraisons..."
+                      placeholder="Mametraha fanontaniana momba ny vokatra, livraisons..."
                       disabled={isLoading}
                       className="flex-1 rounded-full border-green-300 focus:border-green-500 py-5 text-base"
                     />
@@ -975,7 +975,7 @@ export const AIChatbot = () => {
                     </Button>
                   </form>
                   <p className="text-xs text-center text-gray-500 mt-4">
-                    TantsahaBot peut parfois se tromper. Vérifiez les informations importantes.
+                    TantsahaBot dia mety hanao fahadisoana. Hamarino tsara ny zavatra ilaina tena manan-danja.
                   </p>
                 </div>
               </>
