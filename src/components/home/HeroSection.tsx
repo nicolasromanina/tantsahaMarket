@@ -157,8 +157,12 @@ const HeroSection = () => {
                 
                 {/* Featured Product Preview */}
                 <div className="mt-3 md:mt-4 flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg md:rounded-xl bg-muted/30">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl bg-gradient-harvest flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl md:text-2xl">🍚</span>
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl bg-gradient-harvest flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <img 
+                      src="/produit/vary-fotsy.jpg" 
+                      alt="Vary fotsy"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-foreground truncate">Vary gasy</p>

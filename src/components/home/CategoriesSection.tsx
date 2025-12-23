@@ -1,16 +1,88 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 const categories = [
-  { id: 1, name: "Vary & Katsaka", icon: "🌾", count: 3420, color: "from-amber-400 to-yellow-500" },
-  { id: 2, name: "Legioma", icon: "🥬", count: 2850, color: "from-green-400 to-emerald-500" },
-  { id: 3, name: "Voankazo", icon: "🍊", count: 1920, color: "from-orange-400 to-red-400" },
-  { id: 4, name: "Biby fiompy", icon: "🐄", count: 890, color: "from-amber-500 to-orange-500" },
-  { id: 5, name: "Ronono & Atody", icon: "🥛", count: 1250, color: "from-blue-300 to-cyan-400" },
-  { id: 6, name: "Hazan-tsambo", icon: "🐟", count: 760, color: "from-cyan-400 to-blue-500" },
-  { id: 7, name: "Zava-maniry", icon: "🌱", count: 2100, color: "from-lime-400 to-green-500" },
-  { id: 8, name: "Tantely & Ditimena", icon: "🍯", count: 430, color: "from-yellow-400 to-amber-500" },
+  { 
+    id: 1, 
+    name: "Vary & Tsaramaso", 
+    image: "/produit/vary-mainty.jpg", 
+    count: 3420, 
+    color: "from-amber-400 to-yellow-500" 
+  },
+  { 
+    id: 2, 
+    name: "Legioma", 
+    image: "/produit/legioma.jpg", 
+    count: 2850, 
+    color: "from-green-400 to-emerald-500" 
+  },
+  { 
+    id: 3, 
+    name: "Voankazo", 
+    image: "/produit/voan-kazo.jpg", 
+    count: 1920, 
+    color: "from-orange-400 to-red-400" 
+  },
+  { 
+    id: 4, 
+    name: "Biby fiompy", 
+    image: "/produit/biby-fiompy.jpg", 
+    count: 890, 
+    color: "from-amber-500 to-orange-500" 
+  },
+  { 
+    id: 5, 
+    name: "Ronono & Fromazy", 
+    image: "/produit/ronono.jpg", 
+    count: 1250, 
+    color: "from-blue-300 to-cyan-400" 
+  },
+  { 
+    id: 6, 
+    name: "Tongolo & Sakay", 
+    image: "/produit/tongolo.jpg", 
+    count: 760, 
+    color: "from-cyan-400 to-blue-500" 
+  },
+  { 
+    id: 7, 
+    name: "Lavanila & Jirofo", 
+    image: "/produit/lavanila.jpg", 
+    count: 2100, 
+    color: "from-lime-400 to-green-500" 
+  },
+  { 
+    id: 8, 
+    name: "Tantely", 
+    image: "/produit/tantely.jpg", 
+    count: 430, 
+    color: "from-yellow-400 to-amber-500" 
+  },
 ];
+
+// Composant pour gérer les images avec fallback
+const CategoryImage = ({ src, alt, className, color }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div className={`w-full h-full flex items-center justify-center bg-gradient-to-br ${color}`}>
+        <span className="text-2xl md:text-3xl opacity-70">📦</span>
+      </div>
+    );
+  }
+
+  return (
+    <img 
+      src={src} 
+      alt={alt}
+      className={className}
+      onError={() => setHasError(true)}
+      loading="lazy"
+    />
+  );
+};
 
 const CategoriesSection = () => {
   return (
@@ -45,9 +117,14 @@ const CategoriesSection = () => {
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
               
-              {/* Icon */}
-              <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center text-3xl md:text-4xl shadow-md mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                {category.icon}
+              {/* Image Container */}
+              <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center shadow-md mb-4 group-hover:scale-110 transition-transform duration-300 overflow-hidden`}>
+                <CategoryImage 
+                  src={category.image} 
+                  alt={category.name}
+                  color={category.color}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Content */}
